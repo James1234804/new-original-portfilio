@@ -1,1030 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nice Perfect — Professional Tile Installation Services</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>James Julius — Front-end Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --gold: #8B6914;
-      --gold-light: #C4972A;
-      --gold-pale: #F5EDD6;
-      --dark: #0F0E0C;
-      --dark2: #1A1915;
-      --mid: #3A3830;
-      --text: #2A2820;
-      --text-muted: #7A7668;
-      --white: #FDFCF8;
-      --red: #C0392B;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Jost', sans-serif;
-      background: var(--white);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(253,252,248,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(139,105,20,0.15);
-      padding: 0 5vw;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-      transition: all 0.3s ease;
-    }
-
-    .logo {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-    }
-
-    .logo-main {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--dark);
-      letter-spacing: 0.08em;
-    }
-
-    .logo-main span { color: var(--gold); }
-
-    .logo-sub {
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      font-weight: 300;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--text);
-      position: relative;
-      padding-bottom: 2px;
-      transition: color 0.2s;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 1px;
-      background: var(--gold);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-    .nav-links a:hover::after { width: 100%; }
-
-    .nav-cta {
-      background: var(--gold);
-      color: var(--white) !important;
-      padding: 0.5rem 1.2rem;
-      letter-spacing: 0.1em;
-      font-size: 0.75rem !important;
-      transition: background 0.2s !important;
-    }
-
-    .nav-cta:hover { background: var(--gold-light) !important; color: var(--white) !important; }
-    .nav-cta::after { display: none !important; }
-
-    /* HERO */
-    .hero {
-      height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 0 8vw 8vh;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.05);
-      animation: heroZoom 8s ease forwards;
-    }
-
-    @keyframes heroZoom {
-      to { transform: scale(1); }
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(15,14,12,0.85) 0%,
-        rgba(15,14,12,0.4) 50%,
-        rgba(15,14,12,0.15) 100%
-      );
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--white);
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0.4rem 1rem;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.3s ease forwards;
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.5s ease forwards;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-
-    .hero p {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.75);
-      font-weight: 300;
-      letter-spacing: 0.03em;
-      max-width: 480px;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.7s ease forwards;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      opacity: 0;
-      animation: fadeUp 0.8s 0.9s ease forwards;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--white);
-      padding: 1rem 2.5rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-family: 'Jost', sans-serif;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      padding: 1rem 2.5rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-family: 'Jost', sans-serif;
-      font-weight: 500;
-      border: 1px solid rgba(255,255,255,0.5);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold-light);
-      color: var(--gold-light);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* STATS BAR */
-    .stats-bar {
-      background: var(--dark);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .stat-item {
-      padding: 2.5rem 3rem;
-      border-right: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-    }
-
-    .stat-item:last-child { border-right: none; }
-
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      color: var(--gold-light);
-      line-height: 1;
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      margin-top: 0.5rem;
-      font-weight: 400;
-      display: block;
-    }
-
-    /* SECTION STYLES */
-    section { padding: 7rem 8vw; }
-
-    .section-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 300;
-      line-height: 1.15;
-      color: var(--dark);
-    }
-
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: var(--gold);
-      margin: 1.5rem 0 2rem;
-    }
-
-    /* WHO WE ARE */
-    .who-we-are {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      padding-top: 7rem;
-      padding-bottom: 0;
-    }
-
-    .who-img {
-      position: relative;
-    }
-
-    .who-img img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .who-img-accent {
-      position: absolute;
-      bottom: -2rem;
-      right: -2rem;
-      width: 200px;
-      height: 200px;
-      background: var(--gold-pale);
-      z-index: -1;
-    }
-
-    .who-text p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      font-weight: 300;
-      margin-bottom: 2rem;
-    }
-
-    .quote-block {
-      border-left: 3px solid var(--gold);
-      padding: 1rem 1.5rem;
-      margin: 2rem 0;
-      background: var(--gold-pale);
-    }
-
-    .quote-block p {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--dark);
-      margin-bottom: 0.3rem;
-    }
-
-    .quote-block cite {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    /* PROJECTS BANNER */
-    .projects-banner {
-      padding: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 480px;
-    }
-
-    .projects-left {
-      background: var(--gold);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 6rem;
-    }
-
-    .projects-left .big-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem;
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1;
-    }
-
-    .projects-left h2 {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      margin: 0.5rem 0 2rem;
-      font-weight: 400;
-    }
-
-    .projects-right {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .projects-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-
-    .projects-right:hover img { transform: scale(1.04); }
-
-    /* OUR STORY */
-    .our-story {
-      background: var(--dark2);
-      color: var(--white);
-      padding: 7rem 8vw;
-    }
-
-    .our-story .section-label { color: var(--gold-light); }
-    .our-story .section-title { color: var(--white); }
-    .our-story .divider { background: var(--gold-light); }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      margin-top: 3rem;
-    }
-
-    .story-text p {
-      font-size: 1rem;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.6);
-      font-weight: 300;
-    }
-
-    .story-img img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .since-badge {
-      display: inline-block;
-      border: 1px solid var(--gold);
-      padding: 1.5rem 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .since-badge span {
-      display: block;
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 0.3rem;
-    }
-
-    .since-badge strong {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: var(--white);
-    }
-
-    /* SERVICES */
-    .services { background: var(--gold-pale); }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .service-card {
-      background: var(--white);
-      padding: 2.5rem;
-      border-bottom: 3px solid transparent;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-
-    .service-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
-    }
-
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .service-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-      color: var(--dark);
-    }
-
-    .service-card p {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      font-weight: 300;
-    }
-
-    /* GET IN TOUCH */
-    .get-in-touch {
-      padding: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      min-height: 400px;
-    }
-
-    .touch-text {
-      padding: 5rem 4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .touch-text p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-muted);
-      font-weight: 300;
-      margin-bottom: 2rem;
-    }
-
-    .touch-cta {
-      background: var(--red);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem;
-    }
-
-    .touch-cta h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
-      font-weight: 300;
-      color: var(--white);
-      text-align: center;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-    }
-
-    .touch-img {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .touch-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* CONTACT FORM */
-    .contact-section { background: var(--dark); }
-    .contact-section .section-label { color: var(--gold-light); }
-    .contact-section .section-title { color: var(--white); }
-    .contact-section .divider { background: var(--gold-light); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      margin-top: 3rem;
-    }
-
-    .contact-info { color: rgba(255,255,255,0.6); }
-
-    .contact-info p {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      font-weight: 300;
-      margin-bottom: 2rem;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .contact-detail span:first-child {
-      font-size: 1.2rem;
-    }
-
-    .contact-detail span:last-child {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .social-btn {
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .social-btn:hover {
-      border-color: var(--gold);
-      background: var(--gold);
-    }
-
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-
-    .form-group label {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      font-weight: 500;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 0.9rem 1rem;
-      color: var(--white);
-      font-family: 'Jost', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 300;
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--gold);
-    }
-
-    .form-group select option { background: var(--dark2); }
-    .form-group textarea { height: 120px; resize: none; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 2.5rem 8vw;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    footer p {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-      font-weight: 300;
-      letter-spacing: 0.05em;
-    }
-
-    /* HAMBURGER */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 1.5px;
-      background: var(--dark);
-      transition: all 0.3s;
-    }
-
-    /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .who-we-are,
-      .story-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-
-      .who-img-accent { display: none; }
-
-      .projects-banner,
-      .get-in-touch { grid-template-columns: 1fr; }
-
-      .projects-left { padding: 4rem; }
-
-      .services-grid { grid-template-columns: 1fr; }
-
-      .stats-bar { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-
-      .touch-img { min-height: 250px; }
-
-      .form-row { grid-template-columns: 1fr; }
-
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="James Julius — Front-end Developer based in Harare, Zimbabwe." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="logo">
-      <span class="logo-main">|&nbsp;NICE<span>PERFECT</span></span>
-      <span class="logo-sub">Tile Installation Specialists</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#story">Our Story</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">James <span>Julius</span></a>
+      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Premium Tile Installation</div>
-      <h1>Transform Your Space<br>With <em>Expert</em> Tile<br>Installation</h1>
-      <p>We deliver flawless tile installation for homes and businesses across Zimbabwe. Quality craftsmanship, on time, every time.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Get a Free Quote</a>
-        <a href="#about" class="btn-outline">Our Work</a>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <span class="stat-number">500+</span>
-      <span class="stat-label">Projects Completed</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">6+</span>
-      <span class="stat-label">Years of Experience</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">100%</span>
-      <span class="stat-label">Client Satisfaction</span>
-    </div>
-  </div>
-
-  <!-- WHO WE ARE -->
-  <section id="about">
-    <div class="who-we-are">
-      <div class="who-img reveal">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Tile installation work" />
-        <div class="who-img-accent"></div>
-      </div>
-      <div class="who-text reveal">
-        <span class="section-label">Who We Are</span>
-        <h2 class="section-title">Expert Tile Installation<br>You Can Trust</h2>
-        <div class="divider"></div>
-        <p>At Nice Perfect, we specialise in professional tile installation for homes and businesses across Zimbabwe — bringing precision, quality and beauty to every project.</p>
-        <p>Whether it's a bathroom, kitchen, floor or wall — we bring your vision to life with meticulous attention to detail and craftsmanship that lasts.</p>
-        <div class="quote-block">
-          <p>"Quality is never an accident; it is always the result of intelligent effort."</p>
-          <cite>— John Ruskin</cite>
+    <!-- HERO -->
+    <section class="hero reveal">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-badge">Available for work · Harare, Zimbabwe</div>
+        <h1>Hi, I'm <span class="name">James Julius</span><br>Front-end Developer</h1>
+        <p class="lead">I build clean, responsive, and accessible web interfaces using HTML, CSS, JavaScript and Node.js. From pixel-perfect UIs to full-stack apps — I make ideas come to life on the web.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#projects">View my work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS BANNER -->
-  <div class="projects-banner">
-    <div class="projects-left reveal">
-      <div class="big-number">50+</div>
-      <h2>Projects Done This Year</h2>
-      <a href="#contact" class="btn-outline">Our Work →</a>
-    </div>
-    <div class="projects-right">
-      <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&q=80" alt="Completed tile project" />
-    </div>
-  </div>
+    <div class="divider"></div>
 
-  <!-- OUR STORY -->
-  <section id="story" class="our-story">
-    <div class="story-grid">
-      <div class="story-text reveal">
-        <div class="since-badge">
-          <span>Established</span>
-          <strong>2019</strong>
-        </div>
-        <span class="section-label">Our Story</span>
-        <h2 class="section-title">Building Zimbabwe,<br>One Tile at a Time</h2>
-        <div class="divider"></div>
-        <p>Nice Perfect was founded in 2019 with one simple goal — to bring world-class tile installation to homes and businesses across Zimbabwe. What started as a small team with big dreams has grown into one of the country's most trusted names in professional tiling.</p>
-        <br>
-        <p>We believe that every surface tells a story, and we are committed to making that story beautiful. From elegant bathroom walls to stunning kitchen floors, we approach every project with precision, care and an eye for detail. At Nice Perfect, we don't just install tiles — we create spaces people love.</p>
-      </div>
-      <div class="story-img reveal">
-        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&q=80" alt="Our team at work" />
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="services">
-    <div style="text-align:center; max-width:600px; margin:0 auto 1rem;">
-      <span class="section-label">What We Do</span>
-      <h2 class="section-title">Our Services</h2>
-      <div class="divider" style="margin:1.5rem auto 0;"></div>
-    </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon">🚿</div>
-        <h3>Bathroom Tiling</h3>
-        <p>Complete bathroom tile installation — walls, floors, shower enclosures. Waterproof, precise and beautifully finished.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🍳</div>
-        <h3>Kitchen Tiling</h3>
-        <p>Backsplashes, kitchen floors and countertops. We handle every detail with the care your kitchen deserves.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🏠</div>
-        <h3>Floor Tiling</h3>
-        <p>Indoor and outdoor floor tiling for homes and commercial spaces. Durable, level and long-lasting.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🧱</div>
-        <h3>Wall Tiling</h3>
-        <p>Interior and exterior wall tiling. We work with all tile types — ceramic, porcelain, natural stone and mosaic.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🏢</div>
-        <h3>Commercial Tiling</h3>
-        <p>Large-scale commercial projects handled with professionalism and efficiency. On time, every time.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">🔧</div>
-        <h3>Tile Repairs</h3>
-        <p>Cracked or loose tiles? We repair and replace with precision, matching existing patterns and grout perfectly.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GET IN TOUCH BANNER -->
-  <div class="get-in-touch">
-    <div class="touch-text reveal">
-      <span class="section-label">Ready to Start?</span>
-      <p>Whether it's a bathroom, kitchen, floor or wall — we bring your vision to life with precision and quality. Get in touch today and let's discuss your project.</p>
-    </div>
-    <div class="touch-cta">
-      <h2>Get In<br>Touch</h2>
-      <a href="#contact" class="btn-outline">Contact Us →</a>
-    </div>
-    <div class="touch-img">
-      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Kitchen tile installation" />
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact-section">
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <span class="section-label">Get In Touch</span>
-        <h2 class="section-title" style="color:white;">Let's Discuss<br>Your Project</h2>
-        <div class="divider" style="background:var(--gold-light);"></div>
-        <p>Ready to transform your space? Fill in the form and we'll get back to you with a free quote within 24 hours.</p>
-        <div class="contact-detail">
-          <span>📍</span>
-          <span>Harare, Zimbabwe</span>
-        </div>
-        <div class="contact-detail">
-          <span>📞</span>
-          <span>+263 XXX XXX XXX</span>
-        </div>
-        <div class="contact-detail">
-          <span>✉️</span>
-          <span>niceperfect@gmail.com</span>
-        </div>
-        <div class="social-links">
-          <a href="#" class="social-btn">📘</a>
-          <a href="#" class="social-btn">💬</a>
-          <a href="#" class="social-btn">📸</a>
-        </div>
-      </div>
-      <div class="contact-form reveal">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" placeholder="John Doe" />
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <div class="container">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Who I am</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Hello — I'm a front-end web developer specialising in clean, responsive, and accessible user interfaces. My core stack is HTML, CSS and JavaScript, and I've built full-stack projects using Node.js, Express and PostgreSQL with JWT authentication and role-based access control.</p>
+            <p>I've also worked with WordPress + Elementor and Next.js to build a headless CMS architecture — fetching content from WordPress via WPGraphQL and rendering it in a React frontend deployed on Vercel. I'm an avid learner who uses tools like Claude and GitHub Copilot to move faster and build better.</p>
+            <p>📍 Harare, Zimbabwe &nbsp;·&nbsp; 📧 <a href="mailto:jamesimbarashejulius@gmail.com">jamesimbarashejulius@gmail.com</a> &nbsp;·&nbsp; 📱 <a href="tel:0781968103">0781968103</a></p>
           </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="+263 XXX XXX" />
+          <div class="about-card">
+            <div class="avatar">JJ</div>
+            <strong>James Julius</strong>
+            <p>Front-end Developer<br>Harare, Zimbabwe</p>
+            <div class="status-dot">Open to opportunities</div>
           </div>
         </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="john@example.com" />
-        </div>
-        <div class="form-group">
-          <label>Service Needed</label>
-          <select>
-            <option value="">Select a service...</option>
-            <option>Bathroom Tiling</option>
-            <option>Kitchen Tiling</option>
-            <option>Floor Tiling</option>
-            <option>Wall Tiling</option>
-            <option>Commercial Tiling</option>
-            <option>Tile Repairs</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Tell us about your project..."></textarea>
-        </div>
-        <button class="btn-primary" style="width:100%; padding:1rem;">Send Message →</button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Nice Perfect. All rights reserved.</p>
-    <p>Professional Tile Installation · Harare, Zimbabwe</p>
+    <div class="divider"></div>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <div class="container">
+        <p class="section-label">Work</p>
+        <h2 class="section-title">Selected projects</h2>
+        <div class="projects-grid">
+
+          <!-- Step by Step School System -->
+          <article class="project-card">
+            <div class="project-preview">
+              <iframe src="https://shallom-high-elite.onrender.com/login.html" title="Step by Step School System live preview" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+            </div>
+            <div class="project-body">
+              <h3>Step by Step High — School Management System</h3>
+              <p>A full-stack school management system with student, teacher and admin dashboards. Features attendance tracking, fee management, grade recording and role-based access. Built with Node.js, Express and PostgreSQL, deployed live on Render. 🔐 Demo login — Username: <strong>admin</strong> / Password: <strong>admin123</strong></p>
+              <div class="tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+                <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span>
+                <span class="tag">JWT Auth</span><span class="tag">Render</span>
+              </div>
+              <div class="project-links">
+                <a class="btn btn-sm btn-green" href="https://shallom-high-elite.onrender.com/login.html" target="_blank" rel="noopener">Live Demo ↗</a>
+                <a class="btn btn-sm btn-ghost" href="https://github.com/James1234804/step-by-step" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Nice Perfect Tile Installation -->
+          <article class="project-card">
+            <div class="project-preview">
+              <iframe src="https://nice-perfect.vercel.app" title="Nice Perfect Tile Installation live preview" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+            </div>
+            <div class="project-body">
+              <h3>Nice Perfect — Tile Installation Business Website</h3>
+              <p>A professional multi-page business website built for a real client — a tile installation company based in Harare, Zimbabwe. Features a contact form with WhatsApp integration, services showcase, gallery and fully responsive design deployed on Vercel.</p>
+              <div class="tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+                <span class="tag">WhatsApp API</span><span class="tag">Responsive</span><span class="tag">Vercel</span>
+              </div>
+              <div class="project-links">
+                <a class="btn btn-sm btn-green" href="https://nice-perfect.vercel.app" target="_blank" rel="noopener">Live Demo ↗</a>
+                <a class="btn btn-sm btn-ghost" href="https://github.com/James1234804/nice-perfect" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Personal Portfolio -->
+          <article class="project-card">
+            <div class="project-preview">
+              <iframe src="https://new-original-portfilio.vercel.app" title="Personal Portfolio live preview" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+            </div>
+            <div class="project-body">
+              <h3>Personal Portfolio — James Julius</h3>
+              <p>This portfolio you're looking at! Built from scratch with plain HTML, CSS and JavaScript. Features smooth scroll animations, reveal-on-scroll effects, a contact form with FormSubmit integration and a WhatsApp direct message button.</p>
+              <div class="tags">
+                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+                <span class="tag">FormSubmit</span><span class="tag">Responsive</span>
+              </div>
+              <div class="project-links">
+                <a class="btn btn-sm btn-green" href="https://new-original-portfilio.vercel.app" target="_blank" rel="noopener">Live Demo ↗</a>
+                <a class="btn btn-sm btn-ghost" href="https://github.com/James1234804/personal-portifilio" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section reveal">
+      <div class="container">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">What I work with</h2>
+        <div class="skills-layout">
+
+          <!-- Left column -->
+          <div>
+            <p class="skill-group-title"><span>🎨</span> Frontend</p>
+
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">HTML5 &amp; Semantic Markup</span>
+                <span class="skill-pct">95%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-pct="95"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">CSS3 — Flexbox &amp; Grid</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">JavaScript (ES6+)</span>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">Responsive &amp; Mobile-first Design</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-pct="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">Accessibility (WCAG &amp; ARIA)</span>
+                <span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-pct="70"></div></div>
+            </div>
+
+            <br>
+            <p class="skill-group-title"><span>🌐</span> CMS &amp; Frameworks</p>
+
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">WordPress + Elementor</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill amber" data-pct="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">Next.js &amp; React</span>
+                <span class="skill-pct">55%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill amber" data-pct="55"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">WPGraphQL / GraphQL</span>
+                <span class="skill-pct">50%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill amber" data-pct="50"></div></div>
+            </div>
+          </div>
+
+          <!-- Right column -->
+          <div>
+            <p class="skill-group-title"><span>⚙️</span> Backend &amp; Database</p>
+
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">Node.js &amp; Express</span>
+                <span class="skill-pct">65%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill purple" data-pct="65"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">PostgreSQL &amp; SQLite</span>
+                <span class="skill-pct">60%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill purple" data-pct="60"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">JWT Authentication</span>
+                <span class="skill-pct">65%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill purple" data-pct="65"></div></div>
+            </div>
+
+            <br>
+            <p class="skill-group-title"><span>🛠️</span> Tools &amp; DevOps</p>
+
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">Git &amp; GitHub</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">Vercel Deployment</span>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-name">Render Cloud Deployment</span>
+                <span class="skill-pct">65%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-pct="65"></div></div>
+            </div>
+
+            <br>
+            <p class="skill-group-title"><span>✨</span> Other Tools</p>
+            <div class="tools-grid">
+              <span class="tool-pill">npm / Node tooling</span>
+              <span class="tool-pill">Tailwind CSS</span>
+              <span class="tool-pill">ngrok</span>
+              <span class="tool-pill">Claude AI</span>
+              <span class="tool-pill">GitHub Copilot</span>
+              <span class="tool-pill">FormSubmit</span>
+              <span class="tool-pill">Performance & Web Vitals</span>
+              <span class="tool-pill">Cross-browser Testing</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- EXPERIENCE / JOURNEY -->
+    <section id="experience" class="section reveal">
+      <div class="container">
+        <p class="section-label">Journey</p>
+        <h2 class="section-title">My path so far</h2>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-date">2026 — Present</p>
+            <p class="timeline-title">Full-Stack Web Developer (Freelance / Job-seeking)</p>
+            <p class="timeline-desc">Building real-world projects including a full-stack school management system and a client business website for a tile installation company. Actively applying for developer roles and completing take-home assignments for agencies in South Africa.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--accent2)"></div>
+            <p class="timeline-date">2024 — 2025</p>
+            <p class="timeline-title">Web Development Training</p>
+            <p class="timeline-desc">Completed structured training in HTML, CSS, JavaScript, WordPress and Elementor under a web development instructor based in South Africa. Learned responsive design, Git version control, and deployment workflows.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--accent3)"></div>
+            <p class="timeline-date">2024</p>
+            <p class="timeline-title">First Projects Built</p>
+            <p class="timeline-desc">Created the Step by Step High School Management System with a Node.js backend, PostgreSQL database, JWT authentication and role-based dashboards — deployed live on Render. Also built personal portfolio site from scratch.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <div class="container">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Let's work together</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <p>I'm currently open to freelance work and full-time developer roles. If you have a project in mind or want to discuss opportunities, send me a message — I typically respond within 24 hours.</p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:jamesimbarashejulius@gmail.com">
+                <span class="icon">📧</span> jamesimbarashejulius@gmail.com
+              </a>
+              <a class="contact-link" href="tel:0781968103">
+                <span class="icon">📱</span> 0781968103
+              </a>
+              <a class="contact-link" href="https://github.com/James1234804" target="_blank" rel="noopener">
+                <span class="icon">🐙</span> github.com/James1234804
+              </a>
+            </div>
+          </div>
+          <form id="contact-form" class="contact-form" action="https://formsubmit.co/jamesimbarashejulius@gmail.com" method="POST" target="_blank">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New portfolio message">
+            <label>
+              Name
+              <input type="text" name="name" id="name" required placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" id="email" required placeholder="your@email.com" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" id="message" rows="4" required placeholder="Tell me about your project..."></textarea>
+            </label>
+            <div class="form-row">
+              <button class="btn" id="submit-btn" type="submit">Send message</button>
+              <button class="btn btn-ghost" id="whatsapp-btn" type="button">WhatsApp</button>
+            </div>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> James Julius · Built with HTML, CSS &amp; JavaScript · Harare, Zimbabwe</p>
+    </div>
   </footer>
 
-  <script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Nav scroll effect
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 60) {
-        nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
-      } else {
-        nav.style.boxShadow = 'none';
-      }
-    });
-
-    // Mobile menu
-    function toggleMenu() {
-      const links = document.querySelector('.nav-links');
-      if (links.style.display === 'flex') {
-        links.style.display = 'none';
-      } else {
-        links.style.cssText = `
-          display: flex;
-          flex-direction: column;
-          position: fixed;
-          top: 72px;
-          left: 0; right: 0;
-          background: rgba(253,252,248,0.98);
-          padding: 2rem 5vw;
-          gap: 1.5rem;
-          border-bottom: 1px solid rgba(139,105,20,0.15);
-        `;
-      }
-    }
-
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', () => {
-        document.querySelector('.nav-links').style.display = 'none';
-      });
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
