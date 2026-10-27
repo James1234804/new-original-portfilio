@@ -1,444 +1,147 @@
  <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>James Julius — Front-end Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <meta name="description" content="James Julius — Front-end Developer based in Harare, Zimbabwe." />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>James Julius, Full Stack Developer in Harare</title>
+<meta name="description" content="James Julius is a full stack developer in Harare, Zimbabwe. He designs, builds and deploys web applications and business websites for clients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="#top">James Julius</a>
+    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav">
+      <a href="#work">Work</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#">James <span>Julius</span></a>
-      <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav class="site-nav" id="site-nav">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<main id="top">
+<section class="hero wrap">
+  <div class="hero-text">
+    <h1>I build web applications and business websites that clients can rely on.</h1>
+    <p class="lead">I'm James Julius, a full stack developer in Harare, Zimbabwe. I take a project from interface to database to live deployment, using React, Node.js and PostgreSQL.</p>
+    <div class="actions">
+      <a class="btn" href="#work">See my work</a>
+      <a class="btn btn-line" href="#contact">Start a project</a>
     </div>
-  </header>
+    <p class="avail">Available for freelance projects and remote roles.</p>
+  </div>
+  <figure class="portrait">
+    <span class="initials" aria-hidden="true">JJ</span>
+    <img src="images/james.jpg" alt="Portrait of James Julius" onerror="this.remove()">
+  </figure>
+</section>
 
-  <main>
+<section class="facts wrap" aria-label="Summary">
+  <div><strong>5 live projects</strong><span>Deployed on Vercel and Render</span></div>
+  <div><strong>Full stack</strong><span>React, Node.js, Express, PostgreSQL</span></div>
+  <div><strong>Client work</strong><span>Photography and construction businesses</span></div>
+  <div><strong>International team</strong><span>Developer intern at BetaBuilders</span></div>
+</section>
 
-    <!-- HERO -->
-    <section class="hero reveal">
-      <div class="hero-bg"></div>
-      <div class="container">
-        <div class="hero-badge">Available for work · Harare, Zimbabwe</div>
-        <h1>Hi, I'm <span class="name">James Julius</span><br>Front-end Developer</h1>
-        <p class="lead">I build clean, responsive, and accessible web interfaces using HTML, CSS, JavaScript and Node.js. From pixel-perfect UIs to full-stack apps — I make ideas come to life on the web.</p>
-        <div class="hero-ctas">
-          <a class="btn" href="#projects">View my work</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
-        </div>
-      </div>
-    </section>
+<section id="about" class="block wrap split">
+  <h2>About</h2>
+  <div class="prose">
+    <p>I design, build and deploy web software for small businesses and organisations. My work covers the whole stack: responsive interfaces, Node.js and Express APIs, PostgreSQL databases, authentication, and hosting.</p>
+    <p>I write semantic, accessible markup and build mobile-first, because most of my clients' customers visit on a phone. Every project here is live, so you can open it and judge it yourself.</p>
+    <p>I hold a freeCodeCamp Responsive Web Design certification and currently contribute to production apps as part of an international team.</p>
+  </div>
+</section>
 
-    <div class="divider"></div>
-
-    <!-- ABOUT -->
-    <section id="about" class="section reveal">
-      <div class="container">
-        <p class="section-label">About</p>
-        <h2 class="section-title">Who I am</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>Hello — I'm James, a self-taught web developer from Harare, Zimbabwe. I started my journey through freeCodeCamp, earned my Responsive Web Design certification, and never stopped building. What began with HTML and CSS grew into full-stack development — and I've been hooked ever since.</p>
-            <p>I love turning ideas into real, working websites. I build clean, responsive interfaces and I'm comfortable on both the frontend and backend — from designing a UI to wiring up a Node.js API with a PostgreSQL database. I'm always learning, always building, and always looking for the next challenge.</p>
-            <p>📍 Harare, Zimbabwe &nbsp;·&nbsp; 📧 <a href="mailto:jamesimbarashejulius@gmail.com">jamesimbarashejulius@gmail.com</a> &nbsp;·&nbsp; 📱 <a href="tel:0781968103">0781968103</a></p>
-          </div>
-          <div class="about-card">
-            <div class="avatar">JJ</div>
-            <strong>James Julius</strong>
-            <p>Front-end Developer<br>Harare, Zimbabwe</p>
-            <div class="status-dot">Open to opportunities</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section reveal">
-      <div class="container">
-        <p class="section-label">Work</p>
-        <h2 class="section-title">Selected projects</h2>
-        <div class="projects-grid">
-
-          <!-- Tyrell Images -->
-          <article class="project-card">
-            <div class="project-preview">
-              <iframe src="https://tyrell-images.vercel.app/" title="Tyrell Images live preview" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-            </div>
-            <div class="project-body">
-              <h3>Tyrell Images — Photography Business Platform</h3>
-              <p>A full photography business platform built from scratch for a real client. Features a client portal, photographer dashboard, booking system and fully responsive design. Built with HTML, CSS and JavaScript.</p>
-              <div class="tags">
-                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-                <span class="tag">Client Portal</span><span class="tag">Dashboard</span><span class="tag">Responsive</span>
-              </div>
-              <div class="project-links">
-                <a class="btn btn-sm btn-green" href="https://tyrell-images.vercel.app/" target="_blank" rel="noopener">Live Demo ↗</a>
-                <a class="btn btn-sm btn-ghost" href="https://github.com/James1234804/tyrell-images" target="_blank" rel="noopener">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- My Todo App -->
-          <article class="project-card">
-            <div class="project-preview" style="background: linear-gradient(135deg, #0d1525, #111d30); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem;">
-              <div style="width: 100%; max-width: 280px; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255,255,255,0.08);">
-                <p style="color: #e2eaf4; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.75rem; text-align: center;">📝 My Todo App</p>
-                <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 0.5rem 0.75rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                  <span style="color: #f59e0b; font-size: 0.7rem;">🟡 Medium</span>
-                  <span style="color: #7e8fa8; font-size: 0.78rem; flex: 1;">Buy groceries</span>
-                  <span style="color: #7e8fa8; font-size: 0.7rem;">📅 Jun 30</span>
-                </div>
-                <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 0.5rem 0.75rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                  <span style="color: #ef4444; font-size: 0.7rem;">🔴 High</span>
-                  <span style="color: #7e8fa8; font-size: 0.78rem; flex: 1; text-decoration: line-through;">Submit report</span>
-                  <span style="color: #7e8fa8; font-size: 0.7rem;">📅 Jun 28</span>
-                </div>
-                <div style="background: rgba(255,255,255,0.06); border-radius: 8px; padding: 0.5rem 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
-                  <span style="color: #06d6a0; font-size: 0.7rem;">🟢 Low</span>
-                  <span style="color: #7e8fa8; font-size: 0.78rem; flex: 1;">Read a book</span>
-                  <span style="color: #7e8fa8; font-size: 0.7rem;">📅 Jul 1</span>
-                </div>
-                <div style="margin-top: 0.75rem; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; height: 6px;">
-                  <div style="width: 33%; height: 100%; background: linear-gradient(90deg, #3b82f6, #06d6a0); border-radius: 6px;"></div>
-                </div>
-                <p style="color: #7e8fa8; font-size: 0.7rem; text-align: right; margin-top: 0.3rem;">1/3 completed</p>
-              </div>
-            </div>
-            <div class="project-body">
-              <h3>My Todo App — FreeAppStore</h3>
-              <p>A clean productivity app built and published on the FreeAppStore platform as part of my BetaBuilders internship. Features task priorities, due dates, search filtering, progress tracking and localStorage persistence. Passed all platform compliance checks.</p>
-              <div class="tags">
-                <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span>
-                <span class="tag">Vite</span><span class="tag">PWA</span><span class="tag">localStorage</span>
-              </div>
-              <div class="project-links">
-                <a class="btn btn-sm btn-green" href="https://my-todo-app.freeappstore.online" target="_blank" rel="noopener">Live App ↗</a>
-                <a class="btn btn-sm btn-ghost" href="https://freeappstore.online/apps/my-todo-app" target="_blank" rel="noopener">Store Page ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Step by Step School System -->
-          <article class="project-card">
-            <div class="project-preview">
-              <iframe src="https://shallom-high-elite.onrender.com/login.html" title="Step by Step School System live preview" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-            </div>
-            <div class="project-body">
-              <h3>Step by Step High — School Management System</h3>
-              <p>A full-stack school management system with student, teacher and admin dashboards. Features attendance tracking, fee management, grade recording and role-based access. Built with Node.js, Express and PostgreSQL, deployed live on Render. 🔐 Demo login — Username: <strong>admin</strong> / Password: <strong>admin123</strong></p>
-              <div class="tags">
-                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-                <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span>
-                <span class="tag">JWT Auth</span><span class="tag">Render</span>
-              </div>
-              <div class="project-links">
-                <a class="btn btn-sm btn-green" href="https://shallom-high-elite.onrender.com/login.html" target="_blank" rel="noopener">Live Demo ↗</a>
-                <a class="btn btn-sm btn-ghost" href="https://github.com/James1234804/step-by-step" target="_blank" rel="noopener">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Nice Perfect Tile Installation -->
-          <article class="project-card">
-            <div class="project-preview">
-              <iframe src="https://nice-perfect.vercel.app" title="Nice Perfect Tile Installation live preview" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-            </div>
-            <div class="project-body">
-              <h3>Nice Perfect — Tile Installation Business Website</h3>
-              <p>A professional multi-page business website built for a real client — a tile installation company based in Harare, Zimbabwe. Features a contact form with WhatsApp integration, services showcase, gallery and fully responsive design deployed on Vercel.</p>
-              <div class="tags">
-                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-                <span class="tag">WhatsApp API</span><span class="tag">Responsive</span><span class="tag">Vercel</span>
-              </div>
-              <div class="project-links">
-                <a class="btn btn-sm btn-green" href="https://nice-perfect.vercel.app" target="_blank" rel="noopener">Live Demo ↗</a>
-                <a class="btn btn-sm btn-ghost" href="https://github.com/James1234804/nice-perfect" target="_blank" rel="noopener">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Personal Portfolio -->
-          <article class="project-card">
-            <div class="project-preview">
-              <iframe src="https://new-original-portfilio.vercel.app" title="Personal Portfolio live preview" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
-            </div>
-            <div class="project-body">
-              <h3>Personal Portfolio — James Julius</h3>
-              <p>This portfolio you're looking at! Built from scratch with plain HTML, CSS and JavaScript. Features smooth scroll animations, reveal-on-scroll effects, a contact form with FormSubmit integration and a WhatsApp direct message button.</p>
-              <div class="tags">
-                <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-                <span class="tag">FormSubmit</span><span class="tag">Responsive</span>
-              </div>
-              <div class="project-links">
-                <a class="btn btn-sm btn-green" href="https://new-original-portfilio.vercel.app" target="_blank" rel="noopener">Live Demo ↗</a>
-                <a class="btn btn-sm btn-ghost" href="https://github.com/James1234804/personal-portifilio" target="_blank" rel="noopener">Source Code</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section reveal">
-      <div class="container">
-        <p class="section-label">Skills</p>
-        <h2 class="section-title">What I work with</h2>
-        <div class="skills-layout">
-
-          <!-- Left column -->
-          <div>
-            <p class="skill-group-title"><span>🎨</span> Frontend</p>
-
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">HTML5 &amp; Semantic Markup</span>
-                <span class="skill-pct">95%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" data-pct="95"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">CSS3 — Flexbox &amp; Grid</span>
-                <span class="skill-pct">90%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">JavaScript (ES6+)</span>
-                <span class="skill-pct">75%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">Responsive &amp; Mobile-first Design</span>
-                <span class="skill-pct">88%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" data-pct="88"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">Accessibility (WCAG &amp; ARIA)</span>
-                <span class="skill-pct">70%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" data-pct="70"></div></div>
-            </div>
-
-            <br>
-            <p class="skill-group-title"><span>🌐</span> CMS &amp; Frameworks</p>
-
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">WordPress + Elementor</span>
-                <span class="skill-pct">80%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill amber" data-pct="80"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">React &amp; TypeScript</span>
-                <span class="skill-pct">65%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill amber" data-pct="65"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">Tailwind CSS</span>
-                <span class="skill-pct">70%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill amber" data-pct="70"></div></div>
-            </div>
-          </div>
-
-          <!-- Right column -->
-          <div>
-            <p class="skill-group-title"><span>⚙️</span> Backend &amp; Database</p>
-
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">Node.js &amp; Express</span>
-                <span class="skill-pct">65%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill purple" data-pct="65"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">PostgreSQL &amp; SQLite</span>
-                <span class="skill-pct">60%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill purple" data-pct="60"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">JWT Authentication</span>
-                <span class="skill-pct">65%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill purple" data-pct="65"></div></div>
-            </div>
-
-            <br>
-            <p class="skill-group-title"><span>🛠️</span> Tools &amp; DevOps</p>
-
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">Git &amp; GitHub</span>
-                <span class="skill-pct">80%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" data-pct="80"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">Vercel Deployment</span>
-                <span class="skill-pct">75%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" data-pct="75"></div></div>
-            </div>
-            <div class="skill-bar-item">
-              <div class="skill-bar-header">
-                <span class="skill-name">Render Cloud Deployment</span>
-                <span class="skill-pct">65%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" data-pct="65"></div></div>
-            </div>
-
-            <br>
-            <p class="skill-group-title"><span>✨</span> Other Tools</p>
-            <div class="tools-grid">
-              <span class="tool-pill">npm / Node tooling</span>
-              <span class="tool-pill">Tailwind CSS</span>
-              <span class="tool-pill">pnpm</span>
-              <span class="tool-pill">Vite</span>
-              <span class="tool-pill">Claude AI</span>
-              <span class="tool-pill">GitHub Copilot</span>
-              <span class="tool-pill">FormSubmit</span>
-              <span class="tool-pill">Performance & Web Vitals</span>
-              <span class="tool-pill">Cross-browser Testing</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- EXPERIENCE / JOURNEY -->
-    <section id="experience" class="section reveal">
-      <div class="container">
-        <p class="section-label">Journey</p>
-        <h2 class="section-title">My path so far</h2>
-        <div class="timeline">
-
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <p class="timeline-date">June 2026 — Present</p>
-            <p class="timeline-title">Volunteer Developer Intern — BetaBuilders (New Zealand)</p>
-            <p class="timeline-desc">Working as part of an international team building free web applications for the FreeAppStore platform. Contributing frontend development using React, TypeScript and Tailwind CSS.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot" style="background:var(--accent2)"></div>
-            <p class="timeline-date">2025 — 2026</p>
-            <p class="timeline-title">JavaScript Certification — freeCodeCamp (Almost Complete)</p>
-            <p class="timeline-desc">Currently pursuing the JavaScript Algorithms and Data Structures certification on freeCodeCamp. Learned a lot — from ES6+ and async programming to APIs and algorithms. Almost done and applying everything in real projects while actively seeking developer roles.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot" style="background:var(--accent2)"></div>
-            <p class="timeline-date">2024 — 2025</p>
-            <p class="timeline-title">Building Projects &amp; Learning Backend Development</p>
-            <p class="timeline-desc">Applied knowledge from freeCodeCamp to build real-world projects. Expanded into backend development — learning Node.js, Express and PostgreSQL, and building full-stack applications including a complete school management system deployed live.</p>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-dot" style="background:var(--accent3)"></div>
-            <p class="timeline-date">2024</p>
-            <p class="timeline-title">Responsive Web Design Certification — freeCodeCamp</p>
-            <p class="timeline-desc">Earned a Responsive Web Design certification through freeCodeCamp, mastering HTML5, CSS3, Flexbox, CSS Grid and mobile-first design principles. This was the foundation that launched my development journey.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section reveal">
-      <div class="container">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">Let's work together</h2>
-        <div class="contact-wrapper">
-          <div class="contact-info">
-            <p>I'm currently open to freelance work and full-time developer roles. If you have a project in mind or want to discuss opportunities, send me a message — I typically respond within 24 hours.</p>
-            <div class="contact-links">
-              <a class="contact-link" href="mailto:jamesimbarashejulius@gmail.com">
-                <span class="icon">📧</span> jamesimbarashejulius@gmail.com
-              </a>
-              <a class="contact-link" href="tel:0781968103">
-                <span class="icon">📱</span> 0781968103
-              </a>
-              <a class="contact-link" href="https://github.com/James1234804" target="_blank" rel="noopener">
-                <span class="icon">🐙</span> github.com/James1234804
-              </a>
-            </div>
-          </div>
-          <form id="contact-form" class="contact-form" action="https://formsubmit.co/jamesimbarashejulius@gmail.com" method="POST" target="_blank">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="New portfolio message">
-            <label>
-              Name
-              <input type="text" name="name" id="name" required placeholder="Your name" />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" id="email" required placeholder="your@email.com" />
-            </label>
-            <label>
-              Message
-              <textarea name="message" id="message" rows="4" required placeholder="Tell me about your project..."></textarea>
-            </label>
-            <div class="form-row">
-              <button class="btn" id="submit-btn" type="submit">Send message</button>
-              <button class="btn btn-ghost" id="whatsapp-btn" type="button">WhatsApp</button>
-            </div>
-            <p id="form-status" class="form-status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> James Julius · Harare, Zimbabwe</p>
+<section id="work" class="block wrap">
+  <h2>Selected work</h2>
+  <article class="project">
+    <div class="p-head">
+      <h3>Step by Step High</h3>
+      <p class="p-type">School management system</p>
     </div>
-  </footer>
+    <div class="p-body">
+      <p>A multi-role platform for a school: admin, teacher and student dashboards, attendance tracking, fee management and grade recording. Access is controlled per role with JWT authentication.</p>
+      <p class="stack">Node.js, Express, PostgreSQL, JWT, Render</p>
+      <p class="note">Demo login: admin / admin123</p>
+      <p class="links"><a href="https://shallom-high-elite.onrender.com/login.html" target="_blank" rel="noopener">View live system</a><a href="https://github.com/James1234804/step-by-step" target="_blank" rel="noopener">Source code</a></p>
+    </div>
+  </article>
+  <article class="project">
+    <div class="p-head">
+      <h3>Tyrell Images</h3>
+      <p class="p-type">Photography business platform, built for a client</p>
+    </div>
+    <div class="p-body">
+      <p>A platform where the photographer manages bookings and delivers work, and clients sign in to a private portal. Fully responsive across devices.</p>
+      <p class="stack">HTML, CSS, JavaScript, Vercel</p>
+      <p class="links"><a href="https://tyrell-images.vercel.app/" target="_blank" rel="noopener">View live site</a><a href="https://github.com/James1234804/tyrell-images" target="_blank" rel="noopener">Source code</a></p>
+    </div>
+  </article>
+  <article class="project">
+    <div class="p-head">
+      <h3>Nice Perfect</h3>
+      <p class="p-type">Tile installation company website, built for a client</p>
+    </div>
+    <div class="p-body">
+      <p>A multi-page website for a Harare tile installer, with a services showcase, a gallery, and a contact form that sends enquiries straight to WhatsApp.</p>
+      <p class="stack">HTML, CSS, JavaScript, WhatsApp integration, Vercel</p>
+      <p class="links"><a href="https://nice-perfect.vercel.app" target="_blank" rel="noopener">View live site</a><a href="https://github.com/James1234804/nice-perfect" target="_blank" rel="noopener">Source code</a></p>
+    </div>
+  </article>
+  <article class="project">
+    <div class="p-head">
+      <h3>My Todo App</h3>
+      <p class="p-type">Published on FreeAppStore through BetaBuilders</p>
+    </div>
+    <div class="p-body">
+      <p>A task manager with priorities, due dates, search and progress tracking, saved in the browser. It passed the platform's compliance checks and is listed in the store.</p>
+      <p class="stack">React, TypeScript, Tailwind CSS, Vite, PWA</p>
+      <p class="links"><a href="https://my-todo-app.freeappstore.online" target="_blank" rel="noopener">Open the app</a><a href="https://freeappstore.online/apps/my-todo-app" target="_blank" rel="noopener">Store page</a></p>
+    </div>
+  </article>
+</section>
 
-  <script src="script.js" defer></script>
+<section id="skills" class="band">
+  <div class="wrap block split">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <div><dt>Front end</dt><dd>HTML5, CSS3 (Flexbox, Grid), JavaScript (ES6+), React, TypeScript, Tailwind CSS, responsive and accessible design</dd></div>
+      <div><dt>Back end</dt><dd>Node.js, Express, REST APIs, JWT authentication, PostgreSQL, SQLite</dd></div>
+      <div><dt>Delivery</dt><dd>Git and GitHub, Vite, npm and pnpm, deployment on Vercel and Render, WordPress with Elementor</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="experience" class="block wrap split">
+  <h2>Experience</h2>
+  <ol class="timeline">
+    <li><p class="when">June 2026 to present</p><h3>Developer Intern, BetaBuilders (New Zealand)</h3><p>Part of an international team building web applications for the FreeAppStore platform. I build front-end features in React, TypeScript and Tailwind CSS.</p></li>
+    <li><p class="when">2024 to present</p><h3>Freelance Full Stack Developer</h3><p>Websites and web applications for clients in Harare, from a school management system to business sites for a photographer and a tile installer.</p></li>
+    <li><p class="when">2024</p><h3>Responsive Web Design Certification, freeCodeCamp</h3><p>HTML5, CSS3, Flexbox, Grid and mobile-first design.</p></li>
+  </ol>
+</section>
+
+<section id="contact" class="block wrap split">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p class="prose">Tell me what you need built. I reply within 24 hours.</p>
+    <p class="direct"><a href="mailto:jamesimbarashejulius@gmail.com">jamesimbarashejulius@gmail.com</a><a href="tel:+263781968103">+263 78 196 8103</a><a href="https://github.com/James1234804" target="_blank" rel="noopener">github.com/James1234804</a></p>
+    <form id="contact-form" action="https://formsubmit.co/jamesimbarashejulius@gmail.com" method="POST" target="_blank">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New portfolio message">
+      <label>Name<input type="text" name="name" id="name" required autocomplete="name"></label>
+      <label>Email<input type="email" name="email" id="email" required autocomplete="email"></label>
+      <label>Project details<textarea name="message" id="message" rows="4" required></textarea></label>
+      <div class="actions"><button class="btn" id="submit-btn" type="submit">Send message</button><button class="btn btn-line" id="whatsapp-btn" type="button">Message on WhatsApp</button></div>
+      <p id="form-status" class="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer"><div class="wrap"><p>&copy; <span id="year"></span> James Julius. Harare, Zimbabwe.</p></div></footer>
+<script src="script.js" defer></script>
 </body>
 </html>
